@@ -1,0 +1,116 @@
+sample=4096
+c=3*(10**8)
+
+permit = 16.0
+permit_c = 9.0
+
+#dep=100.0
+dep=50.0
+#dep2= 50.0/sqrt(permit)
+
+#WALCHEON
+#dis = 120.0
+#int = 1072.0
+
+#MIHO
+#dis = 50.0
+#int = 442.0
+
+#GYODONG
+#dis = 35.0
+#int = 307.0
+
+#INBO
+#dis = 40.0
+#int = 352.0
+
+#MUNAM
+#40MHZ
+#dis = 73
+#int = 41.0
+
+#100MHz
+#dis = 41
+#int = 41
+
+#GAEGOK
+#40MHZ
+dis = 389
+
+
+
+
+#k=(dep/sample)*sqrt(permit)/sqrt(permit_c)
+k=(dep/sample)
+
+#dis_interval = dis/int
+dis_interval = 0.25
+#dis_interval = 1
+
+
+
+depth_interval = k
+
+y_lm = dep/sqrt(permit)
+x_lm = dis * dis_interval
+
+rat = y_lm/x_lm
+
+mbr=780 #the most bright response
+
+set link y2 via (y/depth_interval)+mbr inverse (y-mbr)*depth_interval
+#set link y2 via (y/depth_interval) inverse y*depth_interval
+
+#set link x2 via (x/dis_interval)+dis inverse (x-dis)*dis_interval
+set link x2 via x/dis_interval inverse x*dis_interval
+
+
+set xlabel "DISTANCE [m]" font "arial,20"
+set ylabel "DEPTH [m]" font "arial,20"
+
+set xtics 
+set ytics 1
+
+set xtics font "arial,10"
+set ytics font "arial,10"
+
+#set yrange[*:*]
+set yrange[y_lm:-5] reverse
+#set yrange[5:-5] reverse
+set xrange[0:x_lm] reverse
+#set xrange[dis-1:0] reverse
+
+
+#set yrange[20:0] reverse
+#set yrange[25:0] reverse
+#set yrange[100:-10] reverse
+
+
+#set palette positive
+#set palette model RGB
+#set palette defined (0 "black",1 "white")
+
+#set palette defined (-20 "black", 0 "black", 20 "white")
+#set palette defined (0 "black", 0.7 "black", 1 "white")
+#set palette defined (0 "dark-grey", 0.7 "black", 1 "white")
+#set palette defined (0 "black", 0.7 "black", 1 "white")
+#set palette defined (0 "black", 0.5 "black", 1 "white")
+
+
+
+#set palette defined (0 "white",1 "black")
+
+#set palette defined (0 '#000fff',\
+#                     1 '#90ff70',\
+#                     2 '#ee0000')
+
+#set palette defined (0 "blue", 0.5 "light-grey", 1 "red")
+#set palette defined (-10 "white", 0 "blue", 0 "red", 10 "white")
+
+set palette grey
+set cbrange[-10**6:10**6]
+
+#set key box
+
+#set size ratio rat
+#set size 2,1

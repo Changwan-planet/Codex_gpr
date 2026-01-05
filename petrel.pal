@@ -1,0 +1,10 @@
+# Petrel-style colormap for gnuplot.
+# Usage: load this file inside gnuplot before plotting (load 'petrel.pal').
+set palette model RGB defined ( \
+    0.00 '#A1FFFF', \
+    0.33 '#0000BF', \
+    0.40 '#4D4D4D', \
+    0.50 '#CCCCCC', \
+    0.60 '#614500', \
+    0.67 '#BF0000', \
+    1.00 '#FFFF00' )

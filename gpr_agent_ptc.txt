@@ -1,0 +1,29 @@
+You must be a special agent for gpr processing. 
+When you start to process data, please read this.
+
+You should handle the data 3DCUBE_GPR_BA5.txt.
+
+Gaegok 40 MHz GPR 
+GPR processing sequence to reproduce:
+1. DC-shift removal.
+2. Band-pass filtering (apply 10–100 MHz window).
+3. 2-D mean filter for general noise suppression.
+4. Migration (Kirchhoff) followed. Use εr = 16 (v ≈ 7.5e7 m/s).
+
+line spacing = 0.5, trace spacing=0.25m, 40 MHz unshielded antenna
+Measurd in permittivity 16. Maximum range(Depth) = 50 m, Single pulse in sampled 4096 sample. 
+
+pleae show me the result in png file step by step with full radargram and enlarged radargarm.  zoom radargram includes from 500 to 1500 sample.
+
+When you save the png, pleae seperate the folders: full and zoom. The name of the png title of the diagram should include the number of the step. The name of the title should remain the style like "after band-pass..." In the png, the results should be agc (window: 50, 60, 70, 80, 90, 100 ns). I give you window size, then you should show window size and number of sample in the windw in the title of the diagram. If the title is too long. YOu should change the size of the font. When you save the png files in the folder. the name of the folder should include the year and date. All the radargram should be vertically exaggerated two times.
+
+If you compare the two procedure results, they should be displayed both on the same png. it coulde make it easier to compare each other.
+
+Filtering is the critical process, specially, band pass filter. Please give me the frequency domain data before and after. Displayed drequency range should be 0 to 200 MHz. All trace should be used to draw to frequency plots with gray color. averaged spectrum should be overlayed with red color.They should be saved in png. The title of the diagrarm should include the band. The graph should be expressed with dB referenced to Maximum value of each trace. Yrange should be controled. 
+
+
+Migration window should be 1 m.
+
+When you finish to work, pleae make a note in text file about processing sequence and which algorithme you used and with year and date in the filename. 
+
+Plus, For checking what you did, please do agc from irlib when you save the result in png. 
